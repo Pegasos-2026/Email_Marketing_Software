@@ -1,0 +1,105 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(circle at top right, rgba(29, 78, 216, 0.22), transparent 28%),
+    linear-gradient(180deg, #071423 0%, #0d2d4b 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 28px;
+  padding: 2.25rem;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.16);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.auth-brand {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.auth-brand h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.auth-brand-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 32rem;
+  line-height: 1.7;
+}
+
+.auth-card .form-group {
+  margin-bottom: 1.15rem;
+}
+
+.auth-card label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(10, 37, 64, 0.07);
+}
+
+.auth-card .btn-primary {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.auth-footer a {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.auth-card .form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-card .form-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.auth-card .form-grid--2 .form-group {
+  margin-bottom: 0;
+}
+
+.alert-error {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,326 @@
+/* Bulk Email Compose Styles */
+.bulk-email-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bulk-email-modal {
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.bulk-email-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid #ecf0f1;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+}
+
+.bulk-email-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.bulk-email-info {
+    background-color: #f0f4ff;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e0e7ff;
+}
+
+.bulk-email-info p {
+    margin: 0;
+    color: #2c3e50;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bulk-email-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    padding: 0.875rem;
+    border: 2px solid #e0e7ff;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    resize: vertical;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 4px rgba(var(--brand-rgb), 0.1);
+    background-color: #fafbff;
+}
+
+.form-group input[type="text"]:disabled,
+.form-group textarea:disabled {
+    background-color: #f5f6fa;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.form-group small {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.bulk-email-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.bulk-email-actions button {
+    flex: 1;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.bulk-email-actions .btn-primary {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+}
+
+.bulk-email-actions .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--brand-rgb), 0.4);
+}
+
+.bulk-email-actions .btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.bulk-email-actions .btn-secondary {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.bulk-email-actions .btn-secondary:hover:not(:disabled) {
+    background-color: #d5dbeb;
+}
+
+.bulk-email-actions .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Error and Success Messages */
+.error-message {
+    background-color: #fee;
+    color: #c0392b;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #e74c3c;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Send Results */
+.send-results {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-left: 4px solid #28a745;
+}
+
+.result-item.success-result {
+    border-left-color: #28a745;
+}
+
+.result-item.failed-result {
+    border-left-color: #dc3545;
+}
+
+.result-label {
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.result-count {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.result-item.failed-result .result-count {
+    background: #dc3545;
+}
+
+.errors-list {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e7ff;
+}
+
+.errors-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.errors-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.errors-list li {
+    padding: 0.75rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid #e74c3c;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.errors-list li strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #c0392b;
+}
+
+.more-errors {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bulk-email-modal {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .bulk-email-header {
+        padding: 1.5rem;
+    }
+
+    .bulk-email-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .bulk-email-form {
+        padding: 1.5rem;
+    }
+
+    .bulk-email-actions {
+        flex-direction: column;
+    }
+
+    .bulk-email-actions button {
+        width: 100%;
+    }
+}

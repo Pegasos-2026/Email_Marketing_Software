@@ -1,0 +1,353 @@
+.contacts-overview {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.overview-card {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.overview-label {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--font-semibold);
+}
+
+.overview-value {
+  margin: 0;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.overview-note {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.contacts-tab {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text);
+}
+
+.section-copy {
+  margin: 0.5rem 0 0;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  max-width: 54ch;
+  line-height: var(--leading-normal);
+}
+
+.contacts-summary {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-semibold);
+}
+
+.contacts-toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.data-table th {
+  color: var(--text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.data-table tbody tr:hover {
+  background: var(--surface-muted);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.status-active {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.status-inactive {
+  background: rgba(226, 232, 240, 0.7);
+  color: #475569;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.no-tags {
+  color: var(--text-muted);
+}
+
+.empty-state,
+.no-data {
+  padding: 2.5rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.modal-header .close-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.modal-header .close-btn:hover {
+  background: var(--surface-muted);
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.form-group label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-weight: 500;
+}
+
+.form-group small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.checkbox-group {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin: 0;
+  width: auto;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.alert {
+  width: 100%;
+}
+
+.import-errors {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--warning-bg);
+  border-radius: var(--radius-lg);
+  background: var(--warning-bg);
+  color: var(--text);
+}
+
+.import-errors ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1rem;
+}
+
+.import-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.validation-progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.validation-progress-fill {
+  height: 100%;
+  background: var(--brand);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.validation-preview-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.validation-preview-valid {
+  color: var(--success);
+  font-weight: var(--font-semibold);
+}
+
+.validation-preview-invalid {
+  color: var(--danger);
+  font-weight: var(--font-semibold);
+}
+
+@media (max-width: 800px) {
+  .section-header,
+  .contacts-toolbar,
+  .list-actions,
+  .modal-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .data-table {
+    min-width: 100%;
+  }
+}

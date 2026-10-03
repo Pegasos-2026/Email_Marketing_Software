@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: email_marketing
+      POSTGRES_USER: email_user
+      POSTGRES_PASSWORD: email_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py ensure_schema &&
+             gunicorn app.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgres://email_user:email_pass@db:5432/email_marketing
+      DEBUG: "False"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - media_data:/app/media
+
+  scheduler:
+    build: .
+    command: python run_scheduler.py 5
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgres://email_user:email_pass@db:5432/email_marketing
+      DEBUG: "False"
+    depends_on:
+      - db
+      - backend
+
+  frontend:
+    build:
+      context: ./email-marketing-frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL:-http://localhost:8000/api}
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  media_data:
